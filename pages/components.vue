@@ -11,7 +11,28 @@
         :key="fontStyle"
         :class="fontStyle"
       >
-        <h1>Font Style: {{ fontStyle }}</h1>
+        <h2>Font Style: {{ fontStyle }}</h2>
+
+        <hr>
+
+        <h2>UI Elements</h2>
+
+        <h3>Tag</h3>
+        <tag>#code</tag>
+        <tag>#photography</tag>
+        <tag>#food</tag>
+
+        <h3>Post preview grid</h3>
+        <post-grid :posts="posts" />
+
+        <h3>Icon</h3>
+        <div
+          v-for="icn of ['x', 'chevron-right', 'activity']"
+          :key="icn"
+          style="width: 20px;"
+        >
+          <icon :icon="icn" />
+        </div>
 
         <h2>Typography</h2>
 
@@ -22,17 +43,7 @@
         <h5>Headline 5</h5>
         <h6>Headline 6</h6>
         <p>Lorem <a href="#">ipsum dolor</a> sit amet, consectetur adipiscing elit. Praesent hendrerit eleifend viverra. Quisque mollis nisi cursus purus rhoncus commodo. Nam vitae augue mollis, consequat massa non, scelerisque nibh. Vivamus commodo placerat est a ornare. Suspendisse potenti. Quisque sit amet ultrices tellus, sit amet aliquet diam. Ut posuere est ipsum, quis tincidunt est scelerisque a. Donec varius interdum sapien, a aliquam ipsum fringilla vitae. Ut lobortis ligula odio. Cras nec suscipit justo.</p>
-        <p>Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia. </p>
-
-        <h2>UI Elements</h2>
-
-        <h3>Tag</h3>
-        <tag>#code</tag>
-        <tag>#photography</tag>
-        <tag>#food</tag>
-
-        <h3>Icon</h3>
-        <icon icon="x" />
+        <p>Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.</p>
       </div>
     </div>
   </div>
@@ -40,13 +51,34 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import tag from '~/components/tag.vue'
-import icon from '~/components/icon.vue'
+import Tag from '~/components/tag.vue'
+import PostGrid from '~/components/post-grid.vue'
+import Icon from '~/components/icon.vue'
 
 export default Vue.extend({
     components: {
-        tag,
-        icon
+        Tag,
+        PostGrid,
+        Icon
+    },
+    data () {
+        return {
+            posts: [
+                {
+                    title: 'Hello World!',
+                    author: 'Jan Hettenkofer',
+                    date: Date(),
+                    excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
+                    image: 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/49404996530185.5eb08b57592de.jpg'
+                }, {
+                    title: 'Hello Universe!',
+                    author: 'Jan Hettenkofer',
+                    date: Date(),
+                    excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
+                    image: 'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/e75ee895896765.5ea1e250ef63b.jpg'
+                }
+            ]
+        }
     }
 })
 </script>
