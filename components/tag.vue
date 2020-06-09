@@ -1,12 +1,12 @@
 <template>
-  <div class="tag">
-    <span class="tag-content">
-      <slot />
-    </span>
-    <span>
-      <icon class="remove" icon="x" />
-    </span>
-  </div>
+    <div class="tag">
+        <span class="tag-content">
+            <slot />
+        </span>
+        <span>
+            <icon class="remove" icon="x" />
+        </span>
+    </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'

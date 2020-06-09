@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <post-preview
-      v-for="post of posts"
-      :key="post.id"
-      :title="post.title"
-      :author="post.author"
-      :date="post.date"
-      :excerpt="post.excerpt"
-      :image="post.image"
-    />
-  </div>
+    <div>
+        <post-preview
+            v-for="post of posts"
+            :key="post.id"
+            :title="post.title"
+            :author="post.author"
+            :date="post.date"
+            :excerpt="post.excerpt"
+            :image="post.image"
+        />
+    </div>
 </template>
 
 <script lang="ts">

@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-    <p v-if="author">
-      by {{ author }}
-    </p>
-    <p v-if="date">
-      {{ formattedDate }}
-    </p>
-    <p v-if="excerpt">
-      {{ excerpt }}
-    </p>
-    <img v-if="image" :src="image">
-  </div>
+    <div>
+        <h1>{{ title }}</h1>
+        <p v-if="author">
+            by {{ author }}
+        </p>
+        <p v-if="date">
+            {{ formattedDate }}
+        </p>
+        <p v-if="excerpt">
+            {{ excerpt }}
+        </p>
+        <img v-if="image" :src="image">
+    </div>
 </template>
 
 <script lang="ts">
@@ -27,7 +27,6 @@ export default Vue.extend({
     },
     computed: {
         formattedDate () {
-            console.log(this.date)
             const _date = typeof this.date === 'string'
                 ? new Date(this.date)
                 : this.date as Date

@@ -1,5 +1,6 @@
 <template>
-  <span class="icon" v-html="iconSVG" />
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <span class="icon" v-html="iconSVG" />
 </template>
 
 <script lang="ts">
@@ -7,9 +8,9 @@ import Vue from 'vue'
 import feather from 'feather-icons'
 
 export default Vue.extend({
-    props: [
-        'icon'
-    ],
+    props: {
+        icon: String
+    },
     computed: {
         iconSVG () {
             return feather.icons[this.icon].toSvg({
