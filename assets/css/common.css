@@ -15,6 +15,8 @@
     --serif-font-stack: essonnes-text, serif;
     --serif-headline-font-stack: essonnes-headline, serif;
 
+    --font-stack: var(--sans-serif-font-stack);
+
     --background-dark: #000000;
     --background-light: #ffffff;
     --foreground-dark: #ffffff;
@@ -38,7 +40,7 @@
 @custom-selector :--text p, h1, h2, h3, h4, h5, h6, span;
 
 * {
-    font-family: var(--sans-serif-font-stack);
+    font-family: var(--font-stack);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: var(--base-font-size);
@@ -50,7 +52,7 @@
 }
 
 .bz-serif {
-    font-family: var(--serif-font-stack);
+    --font-stack: var(--serif-font-stack);
 }
 
 .bz-serif h1,

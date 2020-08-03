@@ -7,7 +7,7 @@
             class="style-container"
         >
             <div
-                v-for="fontStyle of ['font-sans', 'font-serif']"
+                v-for="fontStyle of ['bz-sans', 'bz-serif']"
                 :key="fontStyle"
                 :class="fontStyle"
             >
