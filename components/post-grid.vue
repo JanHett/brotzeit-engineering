@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="grid" :class="classList">
         <post-preview
             v-for="post of posts"
             :key="post.id"
@@ -21,7 +21,20 @@ export default Vue.extend({
         PostPreview
     },
     props: {
-        posts: Array
+        posts: Array,
+        columns: {
+            type: Number,
+            default: 3
+        }
+    },
+    computed: {
+        classList () {
+            const classList = [
+                'grid-cols-' + this.columns
+            ]
+
+            return classList
+        }
     }
 })
 </script>

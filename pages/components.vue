@@ -69,13 +69,33 @@ export default Vue.extend({
                     author: 'Jan Hettenkofer',
                     date: Date(),
                     excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
-                    image: 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/49404996530185.5eb08b57592de.jpg'
+                    image: 'img/forest.jpg'
                 }, {
                     title: 'Hello Universe!',
                     author: 'Jan Hettenkofer',
                     date: Date(),
                     excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
-                    image: 'https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/e75ee895896765.5ea1e250ef63b.jpg'
+                    image: 'img/barbecue.jpg'
+                },
+                {
+                    title: 'Hello World!',
+                    author: 'Jan Hettenkofer',
+                    date: Date(),
+                    excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
+                    image: 'img/forest.jpg'
+                }, {
+                    title: 'Hello Universe!',
+                    author: 'Jan Hettenkofer',
+                    date: Date(),
+                    excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
+                    image: 'img/barbecue.jpg'
+                },
+                {
+                    title: 'Hello World!',
+                    author: 'Jan Hettenkofer',
+                    date: Date(),
+                    excerpt: 'Mauris eget metus a sem imperdiet ultrices vel at lacus. In mollis sit amet massa in sodales. Vestibulum commodo est non tortor sagittis, nec posuere metus feugiat. Aliquam quis lacinia sem, vitae vulputate ligula. Duis aliquet laoreet nulla, eget feugiat justo malesuada id. Phasellus at tempor lectus. Curabitur congue sit amet sapien eu lacinia.',
+                    image: 'img/forest.jpg'
                 }
             ]
         }
@@ -91,6 +111,8 @@ export default Vue.extend({
 */
 
 .style-container {
-  @apply p-8
+  @apply p-8;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 </style>
