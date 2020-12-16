@@ -1,6 +1,5 @@
 
 export default {
-    mode: 'universal',
     /*
   ** Headers of the page
   */
@@ -44,8 +43,13 @@ export default {
     modules: [
         '@nuxtjs/pwa',
         // Doc: https://github.com/nuxt-community/dotenv-module
-        '@nuxtjs/dotenv'
+        '@nuxtjs/dotenv',
+        '@nuxt/content'
     ],
+    /** nuxt content options */
+    content: {
+        dir: 'content/src'
+    },
     /*
   ** Build configuration
   */
