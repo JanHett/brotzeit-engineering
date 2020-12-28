@@ -1,21 +1,25 @@
 <template>
     <div class="post-preview-container">
-        <div class="post-info-container">
+        <a id="post-link" :href="href"><div class="post-info-container">
             <div class="post-info">
                 <h1>{{ title }}</h1>
                 <p v-if="author" class="author">
                     by {{ author }}
                 </p>
-                <p v-if="date" class="date">
+                <p v-if="formattedDate" class="date">
                     {{ formattedDate }}
                 </p>
-                <p v-if="excerpt" class="excerpt">
-                    {{ excerpt }}
+                <p v-if="description" class="description">
+                    {{ description }}
                 </p>
             </div>
             <div class="shade" />
         </div>
-        <img v-if="image" class="post-preview-image" :src="image">
+        <img
+            v-if="image"
+            class="post-preview-image"
+            :src="image"
+        ></a>
     </div>
 </template>
 
@@ -26,16 +30,17 @@ export default Vue.extend({
     props: {
         title: String,
         author: String,
-        date: [String, Date],
-        excerpt: String,
-        image: String
+        updatedAt: [String, Date],
+        description: String,
+        image: String,
+        href: String,
     },
     computed: {
         formattedDate () {
-            const _date = typeof this.date === 'string'
-                ? new Date(this.date)
-                : this.date as Date
-            return _date.toLocaleDateString('en-GB', {})
+            const _date = typeof this.updatedAt === 'string'
+                ? new Date(this.updatedAt)
+                : this.updatedAt as Date
+            return _date?.toLocaleDateString('en-GB', {})
         }
     }
 })
@@ -52,9 +57,15 @@ export default Vue.extend({
     height: 100%;
 }
 
+.post-preview-container #post-link {
+    display: block;
+    height: 100%;
+}
+
 .post-info-container {
     position: relative;
     z-index: 999;
+    height: 100%;
 }
 
 .post-info {

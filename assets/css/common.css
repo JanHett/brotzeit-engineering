@@ -39,14 +39,14 @@
 
 @custom-selector :--text p, h1, h2, h3, h4, h5, h6, span;
 
-* {
+body {
     font-family: var(--font-stack);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: var(--base-font-size);
+    /* font-size: var(--base-font-size); */
 
-    /* color: var(--foreground);
-    background-color: var(--background); */
+    color: var(--foreground);
+    background-color: var(--background);
 
     box-sizing: border-box;
 }

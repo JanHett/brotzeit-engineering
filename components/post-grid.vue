@@ -1,13 +1,15 @@
 <template>
-    <div class="grid" :class="classList">
+    <div class="grid gap-4" :class="classList">
         <post-preview
+            class="post-preview"
             v-for="post of posts"
-            :key="post.id"
+            :key="post.id || post.path"
             :title="post.title"
             :author="post.author"
-            :date="post.date"
-            :excerpt="post.excerpt"
+            :updatedAt="post.updatedAt"
+            :description="post.description"
             :image="post.image"
+            :href="post.href"
         />
     </div>
 </template>
@@ -40,5 +42,4 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-
 </style>
