@@ -3,22 +3,8 @@
       <div id="brand">
         <h1><div id="brand-brotzeit">Brotzeit</div><div id="brand-engineering">.engineering</div></h1>
       </div>
-      <div id="content" class="flex flex-row">
-        <div id="filter-column" class="container max-w-sm p-4">
-          <div id="filters" class="user-nav">
-            <h2>Filter content</h2>
-            <input type="text" placeholder="Search for text or tags like #code">
-          </div>
-        </div>
-        <div id="content" class="container mx-auto">
-          <post-grid class="post-grid" :posts="posts" />
-        </div>
-        <div id="navigation-column" class="container max-w-sm p-4">
-          <ul id="navigation" class="user-nav">
-            <li>Gallery</li>
-            <li>What is Brotzeit?</li>
-          </ul>
-        </div>
+      <div id="content">
+        <post-grid class="post-grid" :posts="posts" />
       </div>
     </div>
 </template>
@@ -91,12 +77,4 @@ export default Vue.extend({
 .post-grid {
   margin-top: 50vh;
 }
-
-/** NAVIGATION */
-
-.user-nav {
-  position: fixed;
-  bottom: var(--spacing);
-}
-
 </style>

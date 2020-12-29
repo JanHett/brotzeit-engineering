@@ -75,14 +75,38 @@ h1 {
     font-weight: 900;
 }
 
+h1:not(:first-child) {
+    margin-top: calc(2 * var(--spacing-xl));
+}
+
+h1:not(:last-child) {
+    margin-bottom: var(--spacing-xl);
+}
+
 h2 {
     font-size: 32px;
     font-weight: 900;
 }
 
+h2:not(:first-child) {
+    margin-top: calc(2 * var(--spacing-l));
+}
+
+h2:not(:last-child) {
+    margin-bottom: var(--spacing-l);
+}
+
 h3 {
     font-size: 24px;
     font-weight: 900;
+}
+
+h3:not(:first-child) {
+    margin-top: calc(2 * var(--spacing));
+}
+
+h3:not(:last-child) {
+    margin-bottom: var(--spacing);
 }
 
 .bz-serif h3,

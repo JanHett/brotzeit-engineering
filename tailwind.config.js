@@ -28,7 +28,8 @@ module.exports = {
                 'Helvetica Neue',
                 'sans-serif'
             ],
-            serif: ['essonnes-text', 'serif']
+            serif: ['essonnes-text', 'serif'],
+            "serif-headline": ['essonnes-headline', 'serif']
         }
     },
     variants: {},
