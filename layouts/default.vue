@@ -12,7 +12,7 @@
         </div>
         <div id="navigation-column" class="container max-w-sm p-4">
           <ul id="navigation" class="user-nav">
-            <li><h3><a href="index">Home</a></h3></li>
+            <li><h3><a href="/">Home</a></h3></li>
             <li><h3><a href="gallery">Gallery</a></h3></li>
             <li><h3><a href="about">What is Brotzeit?</a></h3></li>
           </ul>
