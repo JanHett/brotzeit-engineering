@@ -143,3 +143,8 @@ h6 {
 h6.bz-serif {
     font-style: italic;
 }
+
+input:not([type]), input[type="text"] {
+    background: none;
+    border-bottom: solid var(--line-width) var(--foreground);
+}

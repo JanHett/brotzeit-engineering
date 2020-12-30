@@ -7,10 +7,10 @@
             </h1>
 
             <div class="grid grid-cols-3 gap-12">
-                <div>
+                <div class="col-span-2 xl:col-span-1">
                     <img src="img/self_portrait.jpg" alt="Self portrait">
                 </div>
-                <div class="col-span-2 space-y-4">
+                <div class="col-span-3 xl:col-span-2 space-y-4">
                     <p id="word-type" class="italic">German noun, feminine :</p>
                     <div class="definition space-y-4">
                         <p>
