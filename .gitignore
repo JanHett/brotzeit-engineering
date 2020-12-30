@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# testing files
+
+*.__test__.*

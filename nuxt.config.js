@@ -49,7 +49,7 @@ export default {
   ],
   /** nuxt content options */
   content: {
-    dir: 'content/src'
+    dir: 'content'
   },
   /*
 ** Build configuration
