@@ -1,12 +1,15 @@
 <template>
-    <div class="tag">
+    <span class="tag">
         <span class="tag-content">
             <slot />
-        </span>
-        <span>
-            <icon class="remove" icon="x" />
-        </span>
-    </div>
+        </span><icon
+            icon="x"
+            class="icon-x remove"
+            role="button"
+            aria-label="remove tag"
+            @click.native.passive="emitRemove"
+        />
+    </span>
 </template>
 <script lang="ts">
 import Vue from 'vue'
@@ -15,29 +18,32 @@ import icon from '~/components/icon.vue'
 export default Vue.extend({
     components: {
         icon
+    },
+    methods: {
+        emitRemove() {
+            this.$emit("remove");
+        }
     }
 })
 </script>
 <style scoped>
-    .tag {
-        display: inline flex;
-        border: var(--line-width) solid var(--foreground);
+.tag {
+  @apply p-2;
 
-        padding: var(--spacing-s);
-    }
+  position: relative;
+  display: inline-block;
 
-    .tag-content {
-        margin-right: var(--spacing-xs);
-    }
+  border: solid var(--line-width) var(--foreground);
+}
 
-    .remove {
-        display: block;
-        /* display: inline flex; */
-        position: relative;
-        width: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        /* vertical-align: text-bottom; */
-        cursor: pointer;
-    }
+.tag .icon-x {
+  @apply h-4;
+  @apply ml-1;
+  display: inline-block;
+  vertical-align: sub;
+}
+
+.tag:not(:last-of-type) {
+  @apply mr-2;
+}
 </style>

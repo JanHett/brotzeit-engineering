@@ -7,7 +7,10 @@
         <div id="filter-container">
           <div id="filters" class="">
             <h3>Filter content</h3>
-            <input id="search-field" type="text" placeholder="Search for text or tags like #code">
+            <search-widget
+              v-model="filters"
+              placeholder="Search for text or tags like #code"
+            />
           </div>
         </div>
         <post-grid class="post-grid" :posts="posts" />
@@ -19,10 +22,39 @@
 import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import PostGrid from '~/components/post-grid.vue'
+import Tag from '~/components/tag.vue'
+import TagList from '~/components/tag-list.vue'
+import SearchWidget, { FilterObject } from '~/components/search-widget.vue'
+
+function queryFromFilters(filters: FilterObject) {
+  const q: any = {};
+  if (filters.tags.length) {
+    q.tags = { $elemMatch: { $in: filters.tags } };
+  }
+  if (filters.search) {
+    const titleMatch = { $text: { $search: filters.search }};
+    const authorMatch = { $text: { $search: filters.search }};
+    const descriptionMatch = { $text: { $search: filters.search }};
+
+    q.$or = [ titleMatch, authorMatch, descriptionMatch ];
+  }
+}
+
+const filters = {
+  tags: []
+};
 
 export default Vue.extend({
     components: {
-        PostGrid
+        PostGrid,
+        Tag,
+        TagList,
+        SearchWidget,
+    },
+    data() {
+      return {
+        filters,
+      }
     },
     async asyncData ({ $content, params }: Context & { $content: any }) {
         const posts = (await $content('/')
@@ -32,9 +64,10 @@ export default Vue.extend({
                 'author',
                 'updatedAt',
                 'description',
-                'image'
+                'tags',
+                'image',
             ])
-        // .where(/* filter for tags */) // TODO
+            // .where(queryFromFilters(filters)) // TODO: update filtering whenever user types
             .sortBy('updatedAt', 'desc')
         // .limit(42) // TODO
             .fetch())
@@ -85,15 +118,15 @@ export default Vue.extend({
 #filter-container {
   @apply mb-8;
   @apply p-4;
-  background-color: var(--foreground);
-  color: var(--background);
+  background-color: var(--background);
+  border: solid var(--line-width) var(--foreground);
 }
 
 #filter-container #search-field {
-  border-color: var(--background);
   width: 100%;
 }
 
-.post-grid {
+.tag-list {
+  @apply mb-4;
 }
 </style>
