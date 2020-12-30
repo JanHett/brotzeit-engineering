@@ -66,6 +66,14 @@ export default Vue.extend({
     position: relative;
     z-index: 999;
     height: 100%;
+
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.post-info-container:hover {
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .post-info {

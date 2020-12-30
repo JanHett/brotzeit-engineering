@@ -21,10 +21,13 @@
     --background-light: #ffffff;
     --foreground-dark: #ffffff;
     --foreground-light: #000000;
-
+    --mid-dark: #808080;
+    --mid-light: #808080;
+    
     /* DARK/LIGHT THEMING DEFAULTS - use class .dark or .light if you want to switch themes */
     --background: var(--background-dark);
     --foreground: var(--foreground-dark);
+    --mid: var(--mid-dark);
 }
 
 .dark {
@@ -144,7 +147,19 @@ h6.bz-serif {
     font-style: italic;
 }
 
+p:not(:last-child) {
+    @apply mb-4;
+}
+
 input:not([type]), input[type="text"] {
     background: none;
     border-bottom: solid var(--line-width) var(--foreground);
+}
+
+input:not([type]):focus,
+input[type="text"]:focus {
+    outline: 0;
+    border-bottom-width: calc(2*var(--line-width));
+    /** TODO: remove this ugly hack */
+    margin-bottom: calc(-1 * var(--line-width));
 }

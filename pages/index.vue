@@ -3,7 +3,13 @@
       <div id="brand">
         <h1><div id="brand-brotzeit">Brotzeit</div><div id="brand-engineering">.engineering</div></h1>
       </div>
-      <div id="content">
+      <div id="index-content">
+        <div id="filter-container">
+          <div id="filters" class="">
+            <h3>Filter content</h3>
+            <input id="search-field" type="text" placeholder="Search for text or tags like #code">
+          </div>
+        </div>
         <post-grid class="post-grid" :posts="posts" />
       </div>
     </div>
@@ -70,11 +76,24 @@ export default Vue.extend({
 
 /** CONTENT */
 
-#content {
+#index-content {
+  position: relative;
   z-index: 999;
+  margin-top: 25vh;
+}
+
+#filter-container {
+  @apply mb-8;
+  @apply p-4;
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+#filter-container #search-field {
+  border-color: var(--background);
+  width: 100%;
 }
 
 .post-grid {
-  margin-top: 50vh;
 }
 </style>

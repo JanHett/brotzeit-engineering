@@ -4,7 +4,8 @@
             <h1>{{ page.title }}</h1>
             <nuxt-content :document="page" />
         </article>
-        <div>
+        <hr>
+        <div id="license-info">
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
                 <img
                     alt="Creative Commons Licence"
@@ -31,6 +32,18 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+article {
+    @apply mb-8;
+}
+
+#license-info {
+    @apply my-8;
+}
+
+#license-info p {
+    @apply opacity-75;
+    @apply mt-2;
+}
 
 </style>
