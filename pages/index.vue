@@ -1,20 +1,20 @@
 <template>
     <div>
-      <div id="brand">
-        <h1><div id="brand-brotzeit">Brotzeit</div><div id="brand-engineering">.engineering</div></h1>
-      </div>
-      <div id="index-content">
-        <div id="filter-container">
-          <div id="filters" class="">
-            <h3>Filter content</h3>
-            <search-widget
-              v-model="filters"
-              placeholder="Search for text or tags like #code"
-            />
-          </div>
+        <div id="brand">
+            <h1><div id="brand-brotzeit">Brotzeit</div><div id="brand-engineering">.engineering</div></h1>
         </div>
-        <post-grid class="post-grid" :posts="posts" />
-      </div>
+        <div id="index-content">
+            <div id="filter-container">
+                <div id="filters" class="">
+                    <h3>Filter content</h3>
+                    <search-widget
+                        v-model="filters"
+                        placeholder="Search for text or tags like #code"
+                    />
+                </div>
+            </div>
+            <post-grid class="post-grid" :posts="filteredPosts" />
+        </div>
     </div>
 </template>
 
@@ -26,22 +26,9 @@ import Tag from '~/components/tag.vue'
 import TagList from '~/components/tag-list.vue'
 import SearchWidget, { FilterObject } from '~/components/search-widget.vue'
 
-function queryFromFilters(filters: FilterObject) {
-  const q: any = {};
-  if (filters.tags.length) {
-    q.tags = { $elemMatch: { $in: filters.tags } };
-  }
-  if (filters.search) {
-    const titleMatch = { $text: { $search: filters.search }};
-    const authorMatch = { $text: { $search: filters.search }};
-    const descriptionMatch = { $text: { $search: filters.search }};
-
-    q.$or = [ titleMatch, authorMatch, descriptionMatch ];
-  }
-}
-
-const filters = {
-  tags: []
+const filters: FilterObject = {
+    tags: [],
+    search: ""
 };
 
 export default Vue.extend({
@@ -52,9 +39,9 @@ export default Vue.extend({
         SearchWidget,
     },
     data() {
-      return {
-        filters,
-      }
+        return {
+            filters,
+        }
     },
     async asyncData ({ $content, params }: Context & { $content: any }) {
         const posts = (await $content('/')
@@ -69,12 +56,42 @@ export default Vue.extend({
             ])
             // .where(queryFromFilters(filters)) // TODO: update filtering whenever user types
             .sortBy('updatedAt', 'desc')
-        // .limit(42) // TODO
+            // .limit(42) // TODO
             .fetch())
             .map((post: any) => ({ ...post, href: post.path }))
 
         return {
-            posts
+            posts,
+        }
+    },
+    computed: {
+        /**
+         * Filter the posts on-client
+         * 
+         * @todo this is an ugly performance bottleneck waiting to happen!
+         * Figure out a way to use the nuxt generate mechanism or nuxt/content
+         * or something like that to filter
+         */
+        filteredPosts() {
+            return (this as any).posts.filter((p: any) => {
+                if (this.filters.tags.length && p.tags &&
+                    p.tags.findIndex(
+                        (tag: string) => this.filters.tags.includes(tag)
+                    ) > -1)
+                {
+                    return true;
+                }
+
+                if (this.filters.search && (
+                    p.description?.indexOf(this.filters.search) > -1
+                    || p.title?.toLowerCase().indexOf(this.filters.search.toLowerCase()) > -1
+                    || p.author?.toLowerCase().indexOf(this.filters.search.toLowerCase()) > -1
+                )) {
+                    return true;
+                }
+
+                return !this.filters.tags.length && !this.filters.search;
+            });
         }
     }
 })
