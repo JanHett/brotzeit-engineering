@@ -26,8 +26,8 @@ jobs:
           name: brotzeit-build
           path: dist
       - name: deploy
-        # only deploy on pushes to master
-        # if: github.ref == 'refs/heads/master'
+        # only deploy on pushes to main
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
