@@ -8,17 +8,15 @@
 
             <div class="grid grid-cols-3 gap-12">
                 <div class="col-span-2 xl:col-span-1">
-                    <img src="img/self_portrait.jpg" alt="Self portrait">
+                    <img src="/img/self_portrait.jpg" alt="Self portrait">
                 </div>
                 <div class="col-span-3 xl:col-span-2 space-y-4">
                     <p id="word-type" class="italic">German noun, feminine :</p>
                     <div class="definition space-y-4">
-                        <p>
-                            <ol class="list-decimal list-inside space-y-4">
-                                <li>Literally "bread time"; a meal consisting of sourdough bread, cold cuts, cheese, sausage and raw vegetables</li>
-                                <li><strong>~.engineering :</strong> a meta project about code, photography and food by Jan Hettenkofer</li>
-                            </ol>
-                        </p>
+                        <ol class="list-decimal list-inside space-y-4">
+                            <li>Literally "bread time"; a meal consisting of sourdough bread, cold cuts, cheese, sausage and raw vegetables</li>
+                            <li><strong>~.engineering :</strong> a meta project about code, photography and food by Jan Hettenkofer</li>
+                        </ol>
                         <p class="text-center">...</p>
                         <p>
                             More than just a meal, Brotzeit is often a community event. Be it as a family dinner, a snack during a long hike or the well deserved break from concentrated work, Brotzeit brings people together to share in the celebration of "simple" ingredients.

@@ -61,7 +61,7 @@ export default Vue.extend({
             .map((post: any) => ({
                 ...post,
                 // TODO: remove this hardcoded piece of path
-                href: "articles" + post.path
+                href: "/articles" + post.path
             }));
 
         return {

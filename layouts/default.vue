@@ -7,8 +7,8 @@
         </div>
         <div id="navigation-container" class="container lg:max-w-sm">
           <ul id="navigation" class="user-nav p-4">
-            <li><h3><a href="/">Home</a></h3></li>
-            <li><h3><a href="about">What is Brotzeit?</a></h3></li>
+            <li><h3><nuxt-link to="/">Home</nuxt-link></h3></li>
+            <li><h3><nuxt-link to="/about">What is Brotzeit?</nuxt-link></h3></li>
           </ul>
         </div>
       </div>
