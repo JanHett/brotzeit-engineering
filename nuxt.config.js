@@ -62,7 +62,6 @@ export default {
   ],
   /** nuxt content options */
   content: {
-    dir: 'content'
   },
   /*
 ** Build configuration
@@ -73,5 +72,7 @@ export default {
     */
     extend(/* config, ctx */) {
     }
+  },
+  generate: {
   }
 }

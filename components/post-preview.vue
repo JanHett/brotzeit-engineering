@@ -1,6 +1,6 @@
 <template>
     <div class="post-preview-container">
-        <a id="post-link" :href="href"><div class="post-info-container">
+        <nuxt-link id="post-link" :to="href || '#'"><div class="post-info-container">
             <div class="post-info">
                 <h1>{{ title }}</h1>
                 <p v-if="author" class="author">
@@ -19,7 +19,7 @@
             v-if="image"
             class="post-preview-image"
             :src="image"
-        ></a>
+        ></nuxt-link>
     </div>
 </template>
 
