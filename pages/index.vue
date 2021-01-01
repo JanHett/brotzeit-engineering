@@ -58,7 +58,11 @@ export default Vue.extend({
             .sortBy('updatedAt', 'desc')
             // .limit(42) // TODO
             .fetch())
-            .map((post: any) => ({ ...post, href: post.path }))
+            .map((post: any) => ({
+                ...post,
+                // TODO: remove this hardcoded piece of path
+                href: "articles" + post.path
+            }));
 
         return {
             posts,

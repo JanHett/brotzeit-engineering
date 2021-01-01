@@ -1,3 +1,4 @@
+import formatSiteMetadata from './utils/format-site-metadata';
 
 export default {
   target: "static",
@@ -5,14 +6,26 @@ export default {
    * Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.TITLE || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      ...formatSiteMetadata({
+        description: process.env.npm_package_description,
+        image: "favicon.png",
+        type: "website",
+        url: process.env.BASE_URL,
+        title: process.env.TITLE,
+      })
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: process.env.WEBFONTS },
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: process.env.BASE_URL,
+      },
     ]
   },
   /**

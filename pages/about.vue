@@ -36,6 +36,15 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+    head: {
+        link: [
+            {
+                hid: "canonical",
+                rel: "canonical",
+                href: process.env.BASE_URL + "/about",
+            },
+        ]
+    },
     components: {
     },
 })
