@@ -1,0 +1,30 @@
+name: "Build and deploy"
+
+on:
+  - push
+  - pull_request
+
+
+jobs:
+  build-and-deploy:
+    name: "Build and deploy"
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install
+        run: |
+            npm i
+      - name: build
+        run: |
+            npm run generate
+      - uses: actions/upload-artifact@v2
+        with:
+          name: brotzeit-build
+          path: dist
+      - name: deploy
+        # only deploy on pushes to master
+        # if: github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
