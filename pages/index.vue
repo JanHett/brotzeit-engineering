@@ -97,6 +97,37 @@ export default Vue.extend({
                 return !this.filters.tags.length && !this.filters.search;
             });
         }
+    },
+    watch: {
+        filteredPosts() {
+            // save search to URL parameters
+            const filterValue = this.filters;
+            const params = new URLSearchParams(window.location.search);
+            if (filterValue.search) {
+                params.set("search", filterValue.search);
+            } else params.delete("search");
+            if (filterValue.tags.length) {
+                params.set("tags",
+                    encodeURIComponent(filterValue.tags.join(" ")));
+            } else params.delete("tags");
+
+            history.replaceState(null, "",
+                window.location.pathname + "?" + params.toString());
+        }
+    },
+    mounted() {
+        // reconstruct search from URL parameters
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("search") && typeof params.get("search") === "string")
+        {
+            this.filters.search = params.get("search") as string;
+        }
+        if (params.has("tags") && typeof params.get("tags") === "string")
+        {
+            const parsedTags = decodeURIComponent(params.get("tags") as string)
+                .split(" ");
+            this.filters.tags = parsedTags;
+        }
     }
 })
 </script>
