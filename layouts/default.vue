@@ -1,7 +1,7 @@
 <template>
     <div class="dark">
       <div id="layout-content" class="container mx-auto flex flex-row">
-        <div id="left-column" class="flex-none hidden xl:block w-64"></div>
+        <div id="left-column" class="flex-none hidden 2xl:block w-64"></div>
         <div id="content" class="flex-1 mx-auto p-4">
           <nuxt />
         </div>
@@ -11,7 +11,7 @@
           </ul>
         </div>
       </div>
-      <hamburger-menu id="hamburger" :links="links"></hamburger-menu>
+      <hamburger-menu id="hamburger" :links="links" class="block xl:hidden"></hamburger-menu>
       <!-- <div id="mobile-navigation-container" class="block xl:hidden p-4">
         <ul id="navigation" class="p-4">
           <li v-for="ln of links" :key="ln.target"><h3><nuxt-link :to="ln.target">{{ln.label}}</nuxt-link></h3></li>

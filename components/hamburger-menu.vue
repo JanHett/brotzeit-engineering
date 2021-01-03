@@ -2,7 +2,7 @@
     <div class="bz-hamburger">
         <div class="mobile-navigation-container" v-if="open">
             <ul class="navigation p-4">
-                <li v-for="ln of links" :key="ln.target"><h3><nuxt-link :to="ln.target">{{ln.label}}</nuxt-link></h3></li>
+                <li v-for="ln of links" :key="ln.target"><h3><nuxt-link :to="ln.target" @click.native="open = false">{{ln.label}}</nuxt-link></h3></li>
             </ul>
         </div>
         <button class="hamburger-button" @click="open = !open" :class="{open}">

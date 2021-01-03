@@ -1,5 +1,5 @@
 <template>
-    <div class="grid gap-4" :class="classList">
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <post-preview
             class="post-preview"
             v-for="post of posts"
@@ -27,15 +27,6 @@ export default Vue.extend({
         columns: {
             type: Number,
             default: 3
-        }
-    },
-    computed: {
-        classList () {
-            const classList = [
-                'grid-cols-' + this.columns
-            ]
-
-            return classList
         }
     }
 })
