@@ -1,7 +1,7 @@
 <template>
     <div class="post-preview-container">
         <nuxt-link id="post-link" :to="href || '#'"><div class="post-info-container">
-            <div class="post-info">
+            <div class="post-info prose">
                 <h1>{{ title }}</h1>
                 <p v-if="author" class="author">
                     by {{ author }}
@@ -9,6 +9,9 @@
                 <p v-if="formattedDate" class="date">
                     {{ formattedDate }}
                 </p>
+                <div class="post-info-tags" v-if="tags">
+                    <tag v-for="tag of tags" :key="tag">{{tag}}</tag>
+                </div>
                 <p v-if="description" class="description">
                     {{ description }}
                 </p>
@@ -25,8 +28,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import tag from './tag.vue'
 
 export default Vue.extend({
+  components: { tag },
     props: {
         title: String,
         author: String,
@@ -34,6 +39,7 @@ export default Vue.extend({
         description: String,
         image: String,
         href: String,
+        tags: Array,
     },
     computed: {
         formattedDate () {

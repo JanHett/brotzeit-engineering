@@ -3,6 +3,7 @@
         <tag
             v-for="(tag, index) of tags"
             :key="tag"
+            :removable="editable"
             @remove="handleRemoveEvent(index)"
         >{{tag}}</tag>
     </div>
@@ -24,6 +25,10 @@ export default Vue.extend({
         tags: {
             type: Array,
             default: () => [],
+        },
+        editable: {
+            type: Boolean,
+            default: true,
         }
     },
     methods: {

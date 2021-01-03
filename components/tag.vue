@@ -7,6 +7,7 @@
             class="icon-x remove"
             role="button"
             aria-label="remove tag"
+            v-if="removable"
             @click.native.passive="emitRemove"
         />
     </span>
@@ -19,6 +20,12 @@ export default Vue.extend({
     components: {
         icon
     },
+    props: {
+        removable: {
+            type: Boolean,
+            default: false,
+        }
+    },
     methods: {
         emitRemove() {
             this.$emit("remove");
@@ -29,11 +36,16 @@ export default Vue.extend({
 <style scoped>
 .tag {
   @apply p-2;
+  @apply mb-2;
 
   position: relative;
   display: inline-block;
 
   border: solid var(--line-width) var(--foreground);
+}
+
+.tag:not(:last-of-type) {
+  @apply mr-2;
 }
 
 .tag .icon-x {
@@ -42,9 +54,5 @@ export default Vue.extend({
   @apply ml-1;
   display: inline-block;
   vertical-align: sub;
-}
-
-.tag:not(:last-of-type) {
-  @apply mr-2;
 }
 </style>

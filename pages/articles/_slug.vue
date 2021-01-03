@@ -1,6 +1,6 @@
 <template>
     <div>
-        <article>
+        <article class="prose mx-auto">
             <h1>{{ page.title }}</h1>
             <nuxt-content :document="page" />
         </article>

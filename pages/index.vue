@@ -179,6 +179,6 @@ export default Vue.extend({
 }
 
 .tag-list {
-  @apply mb-4;
+  @apply mb-2;
 }
 </style>

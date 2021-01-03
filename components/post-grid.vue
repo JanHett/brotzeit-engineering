@@ -10,6 +10,7 @@
             :description="post.description"
             :image="post.image"
             :href="post.href"
+            :tags="post.tags"
         />
     </div>
 </template>
