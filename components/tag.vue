@@ -38,6 +38,7 @@ export default Vue.extend({
 
 .tag .icon-x {
   @apply h-4;
+  @apply w-4;
   @apply ml-1;
   display: inline-block;
   vertical-align: sub;

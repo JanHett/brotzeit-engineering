@@ -71,9 +71,11 @@ export default Vue.extend({
     transition: opacity 0.5s;
 }
 
-.post-info-container:hover {
-    opacity: 0;
-    transition: opacity 0.5s;
+@media (hover: hover) {
+    .post-info-container:hover {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
 }
 
 .post-info {
