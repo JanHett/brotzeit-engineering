@@ -50,6 +50,8 @@ body {
     background-color: var(--background);
 
     box-sizing: border-box;
+
+    scroll-behavior: smooth;
 }
 
 .bz-serif {

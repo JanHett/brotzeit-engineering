@@ -2,7 +2,7 @@
     <div class="dark">
       <div id="layout-content" class="container mx-auto flex flex-row">
         <div id="left-column" class="flex-none hidden 2xl:block w-64"></div>
-        <div id="content" class="flex-1 mx-auto p-4">
+        <div id="content" class="flex-1 mx-auto px-4 pb-4">
           <nuxt />
         </div>
         <div id="desktop-navigation-container" class="flex-none hidden xl:block w-64">

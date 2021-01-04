@@ -1,7 +1,15 @@
 <template>
     <div>
+        <div id="article-header">
+            <h1 id="header-title" ref="title">{{ page.title }}</h1>
+            <img
+                id="header-image"
+                v-if="page.image"
+                :src="page.image"
+                :alt="page.description || 'Title image'"
+            >
+        </div>
         <article class="prose mx-auto">
-            <h1>{{ page.title }}</h1>
             <nuxt-content :document="page" />
         </article>
         <hr>
@@ -21,8 +29,9 @@
 </template>
 
 <script lang="ts">
-import { Context } from '@nuxt/types'
+import { Context } from '@nuxt/types';
 import formatSiteMetadata from '../../utils/format-site-metadata';
+import { easing } from '../../utils/animation';
 
 export default {
     head() {
@@ -82,11 +91,58 @@ export default {
         return {
             page,
         }
+    },
+    mounted() {
+        //
+        // Smooth scrolling to headline
+        //
+
+        // reset scroll - TODO: this seems a bit rubbish to me. Fix it.
+        window.scrollTo(0, 0);
+
+        const duration = 1600;
+        const elementY = ((this as any).$refs.title as Element)
+            .getBoundingClientRect().top;
+        const startingY = window.pageYOffset;
+        const diff = elementY - startingY;
+        let start: number;
+
+        // Bootstrap our animation - it will get called right before next frame shall be rendered.
+        window.requestAnimationFrame(function step(timestamp: number) {
+            if (!start) start = timestamp;
+            // Elapsed milliseconds since start of scrolling.
+            const time = timestamp - start;
+            // Get percent of completion in range [0, 1].
+            const percent = easing(Math.min(time / duration, 1));
+
+            window.scrollTo(0, startingY + diff * percent);
+
+            // Proceed with animation as long as we wanted it to.
+            if (time < duration) {
+                window.requestAnimationFrame(step);
+            }
+        })
     }
 }
 </script>
 
 <style scoped>
+#article-header {
+    position: relative;
+    @apply mb-16;
+}
+
+#header-title {
+    position: absolute;
+    bottom: 0px;
+    @apply px-8;
+    width: 100%;
+}
+
+#header-image {
+    width: 100%;
+}
+
 article {
     @apply mb-8;
 }
