@@ -41,6 +41,13 @@ export default Vue.extend({
 
 <style scoped>
 
+/** CONTENT */
+
+#content {
+  /** Keep the size sane on small screens */
+  max-width: 100%;
+}
+
 /** NAVIGATION */
 
 .user-nav {

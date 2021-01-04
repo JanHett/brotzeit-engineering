@@ -139,6 +139,17 @@ export default {
     width: 100%;
 }
 
+/* maybe this should be 768px */
+@media screen and (max-width: 640px) {
+    #article-header {
+        @apply prose;
+    }
+
+    #article-header img {
+        @apply mt-0;
+    }
+}
+
 #header-image {
     width: 100%;
 }
