@@ -1,6 +1,6 @@
 ---
 title: Work in progress...
-image: img/forest.jpg
+image: /img/forest.jpg
 author: Jan Hettenkofer
 ---
 

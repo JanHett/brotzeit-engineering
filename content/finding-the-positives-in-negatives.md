@@ -3,7 +3,7 @@ title: Finding the positive in negatives (on film)
 author: Jan Hettenkofer
 createdAt: 2019-06-05
 updatedAt: 2019-06-05
-image: img/cimetiere_montmartre_three_panels.jpg
+image: /img/cimetiere_montmartre_three_panels.jpg
 tags:
     - code
     - photography
@@ -28,11 +28,21 @@ I don’t accept that. There’s no way generations of photographers and highly 
 
 ## A primer on colour negative film
 
-![Modern Art? No, this is the fake “colour negative” I concocted to test the algorithm.](/img/test_negative.jpg)
+<figure>
+    <img src="/img/test_negative.jpg"
+         alt="A synthetic image showing a black-to-transparent gradient as well as a color spectrum on an orange background"
+         class="mx-auto">
+    <figcaption>Modern Art? No, this is the fake “colour negative” I concocted to test the algorithm.</figcaption>
+</figure>
 
 There is plenty of information out there on how colour negative film works and this article is not about that, but here’s a quick rundown for the uninitiated: the plastic base is coated with photosensitive cyan, magenta and yellow dyes (each on their own layer). Since these might have slight impurities in them, the plastic base is coloured orange to mask those imperfections. When printing in a darkroom, the photographer would dial in a combination of colour filters to remove that mask.
 
-![This is probably as bad as it gets for real world input data: uneven lighting in both colour and intensity, the file is pre-processed instead of raw, the values are clearly not distributed across the entire range afforded by the format, the film this was taken on is long expired and on top of all that there is some dirt on the negative. Nevertheless, this will serve as our example today.](/img/cimetiere_montmartre_negative.jpg)
+<figure>
+    <img src="/img/cimetiere_montmartre_negative.jpg"
+         alt="An untreated digitisation of a colour negative photograph of Cimetiére Montmartre"
+         class="mx-auto">
+    <figcaption>This is probably as bad as it gets for real world input data: uneven lighting in both colour and intensity, the file is pre-processed instead of raw, the values are clearly not distributed across the entire range afforded by the format, the film this was taken on is long expired and on top of all that there is some dirt on the negative. Nevertheless, this will serve as our example today.</figcaption>
+</figure>
 
 In addition to the orange base, the negative is also extremely low contrast, the idea being that the film should have more exposure latitude than strictly necessary so that a variety of extremely high contrast scenes can be reproduced naturally. In the darkroom this flat, linear curve would be transformed into a slightly steeper (read: more contrasty) S-curve by use of the appropriate paper and development process.
 
@@ -48,11 +58,21 @@ In an ideal world we could just include a bit of the films border in our scan an
 
 Having found the colour of our orange base, we can now scale all pixel values so that the base ends up being white. To maintain the largest possible precision, the image should be exposed so that the orange base is nearly white already (clipped values should be avoided at all cost, though).
 
-![This is what the dummy negative looks like after being run through the conversion process. Note that the colours are much more saturated than they would be in a real negative — the test image was designed this way to allow checking for clipping artefacts.](/img/test_negative_converted.jpg)
+<figure>
+    <img src="/img/test_negative_converted.jpg"
+         alt="A synthetic image showing a white-to-transparent gradient as well as a color spectrum on a black background"
+         class="mx-auto">
+    <figcaption>This is what the dummy negative looks like after being run through the conversion process. Note that the colours are much more saturated than they would be in a real negative — the test image was designed this way to allow checking for clipping artefacts.</figcaption>
+</figure>
 
 Now that our colours are simply inverted, we can convert the image to a positive by subtracting every pixel value from one. As a final touch we might want to scale the values such that the brightest channel maxes out at exactly one (meaning that pixel values will be contained in the interval ((0, 0, 0), (r_max, g_max, b_max)) such that at least one of r_max, g_max and b_max is exactly equal to one and none of them are larger than one).
 
-![The above image after conversion (left) and after increasing contrast, cropping and some minor colour adjustments in Photoshop (right).](/img/cimetiere_montmartre_positive.jpg)
+<figure>
+    <img src="/img/cimetiere_montmartre_positive.jpg"
+         alt="A positive image derived from the colour negative photograph of Cimetiére Montmartre"
+         class="mx-auto">
+    <figcaption>The above image after conversion (left) and after increasing contrast, cropping and some minor colour adjustments in Photoshop (right).</figcaption>
+</figure>
 
 This image will still look rather flat. That’s exactly what we want, though. We can treat this as the raw file which we can use as a base for more creative adjustments.
 
@@ -132,7 +152,12 @@ You can find the entire program on my GitHub: https://github.com/JanHett/proto-a
 
 # Discussing the results
 
-![Mamiya RZ67, Apo-Sekor Z 210mm f/4.5, Kodak Ektar 100 (expired in 2016)](/img/parc_bercy.jpg)
+<figure>
+    <img src="/img/parc_bercy.jpg"
+         alt="A colour corrected photograph of a building near Parc de Bercy"
+         class="mx-auto">
+    <figcaption>Mamiya RZ67, Apo-Sekor Z 210mm f/4.5, Kodak Ektar 100 (expired in 2016)</figcaption>
+</figure>
 
 It is hard to judge the accuracy of this program objectively. The photograph shown above and the previously treated image were both digitised under less than perfect conditions: the backlight was provided by an iPad, the camera was set up on a shaky tripod and the lenses used (a Sony FE 55mm f/1.8 and a Zeiss Planar 85mm f/1.4 ZF) are entirely unsuited for reproduction photography. As noted below the images, they were also taken on expired film (which was not refrigerated for most of its life), hence even a perfect digitisation would probably exhibit strong discolouration.
 
