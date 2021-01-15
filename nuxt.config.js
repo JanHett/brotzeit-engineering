@@ -62,6 +62,7 @@ export default {
   ],
   /** nuxt content options */
   content: {
+    liveEdit: false,
   },
   /*
 ** Build configuration

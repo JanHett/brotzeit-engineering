@@ -32,8 +32,12 @@
 import { Context } from '@nuxt/types';
 import formatSiteMetadata from '../../utils/format-site-metadata';
 import { easing } from '../../utils/animation';
+import FullBleedSection from "~/components/full-bleed-section.vue";
 
 export default {
+    components: {
+        FullBleedSection,
+    },
     head() {
         return {
             title: (this as any).page.title,
@@ -95,6 +99,7 @@ export default {
     mounted() {
         //
         // Smooth scrolling to headline
+        // source: https://stackoverflow.com/a/39494245/1824538
         //
 
         // reset scroll - TODO: this seems a bit rubbish to me. Fix it.
