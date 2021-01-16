@@ -6,6 +6,7 @@
             :key="post.id || post.path"
             :title="post.title"
             :author="post.author"
+            :createdAt="post.createdAt"
             :updatedAt="post.updatedAt"
             :description="post.description"
             :image="post.image"

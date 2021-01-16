@@ -49,6 +49,7 @@ export default Vue.extend({
                 'path',
                 'title',
                 'author',
+                'createdAt',
                 'updatedAt',
                 'description',
                 'tags',

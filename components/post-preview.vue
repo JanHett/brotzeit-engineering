@@ -3,16 +3,17 @@
         <nuxt-link id="post-link" :to="href || '#'"><div class="post-info-container">
             <div class="post-info prose">
                 <h1>{{ title }}</h1>
-                <p v-if="author" class="author">
-                    by {{ author }}
+                <p v-if="author" class="author font-serif">
+                    by <span class="font-bold">{{ author }}</span>
                 </p>
-                <p v-if="formattedDate" class="date">
-                    {{ formattedDate }}
+                <p v-if="formattedCreatedDate || formattedUpdatedDate" class="date font-serif">
+                    <span v-if="formattedCreatedDate">published <span class="font-bold">{{ formattedCreatedDate }}</span><br></span>
+                    <span v-if="formattedUpdatedDate && createdDate.getTime() !== updatedDate.getTime()">last updated <span class="font-bold">{{ formattedUpdatedDate }}</span></span>
                 </p>
                 <div class="post-info-tags" v-if="tags">
                     <tag v-for="tag of tags" :key="tag">{{tag}}</tag>
                 </div>
-                <p v-if="description" class="description">
+                <p v-if="description" class="description font-serif">
                     {{ description }}
                 </p>
             </div>
@@ -35,6 +36,7 @@ export default Vue.extend({
     props: {
         title: String,
         author: String,
+        createdAt: [String, Date],
         updatedAt: [String, Date],
         description: String,
         image: String,
@@ -42,11 +44,21 @@ export default Vue.extend({
         tags: Array,
     },
     computed: {
-        formattedDate () {
-            const _date = typeof this.updatedAt === 'string'
+        createdDate() {
+            return typeof this.createdAt === 'string'
+                ? new Date(this.createdAt)
+                : this.createdAt as Date;
+        },
+        updatedDate() {
+            return typeof this.updatedAt === 'string'
                 ? new Date(this.updatedAt)
-                : this.updatedAt as Date
-            return _date?.toLocaleDateString('en-GB', {})
+                : this.updatedAt as Date;
+        },
+        formattedCreatedDate () {
+            return (this as any).createdDate?.toLocaleDateString('en-GB', {})
+        },
+        formattedUpdatedDate () {
+            return (this as any).updatedDate?.toLocaleDateString('en-GB', {})
         }
     }
 })
@@ -109,7 +121,7 @@ export default Vue.extend({
     width: 100%;
     height: 100%;
     background-color: var(--background);
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .author,
