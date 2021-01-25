@@ -33,10 +33,12 @@ import { Context } from '@nuxt/types';
 import formatSiteMetadata from '../../utils/format-site-metadata';
 import { easing } from '../../utils/animation';
 import FullBleedSection from "~/components/full-bleed-section.vue";
+import SrcsetImg from "~/components/srcset-image.vue";
 
 export default {
     components: {
         FullBleedSection,
+        SrcsetImg,
     },
     head() {
         return {
