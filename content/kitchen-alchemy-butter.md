@@ -17,7 +17,7 @@ Butter can be made from milk or - as it is the case here - from heavy cream. If 
 
 <full-bleed-section>
     <div
-        class="grid grid-cols-3 gap-8 w-full relative"
+        class="grid grid-cols-3 gap-4 w-full relative"
     >
             <img alt="Heavy cream in a stand mixer" src="/img/kitchen-alchemy-butter/0419_butter_CF005001.jpg">
             <img alt="Half-churned butter with clearly visible fat globules" src="/img/kitchen-alchemy-butter/0419_butter_CF005008.jpg">
@@ -35,7 +35,7 @@ First, the grains of fat are worked into a consistent mass by kneading them toge
 
 <full-bleed-section>
     <div
-        class="grid grid-cols-3 gap-8 w-full relative"
+        class="grid grid-cols-3 gap-4 w-full relative"
     >
             <img alt="Butter in the process of being kneaded with visible drops of buttermilk" src="/img/kitchen-alchemy-butter/0419_butter_CF005041.jpg">
             <img alt="The crust on a bowl of ice water is being smashed by a granite pestle" src="/img/kitchen-alchemy-butter/0419_butter_CF005048.jpg">
@@ -47,7 +47,7 @@ While fresh butter on a slice of sourdough bread is a treat on its own, it can a
 
 <full-bleed-section>
     <div
-        class="grid grid-cols-2 gap-8 w-full relative"
+        class="grid grid-cols-2 gap-4 w-full relative"
     >
             <img alt="Basil, birds-eye chillies, vanilla, rosmary and salt on a chopping board" src="/img/kitchen-alchemy-butter/0419_butter_CF005082.jpg">
             <img alt="An assortment of unseasoned and seasoned butter" src="/img/kitchen-alchemy-butter/0419_butter_CF005094.jpg">
