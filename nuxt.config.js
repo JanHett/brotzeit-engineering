@@ -26,6 +26,16 @@ export default {
         rel: "canonical",
         href: process.env.BASE_URL,
       },
+    ],
+    script: [
+      // Cloudflare Web Analytics
+      {
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        "data-cf-beacon": process.env.CLOUDFLARE_ANALYTICS_TOKEN,
+        defer: true,
+        body: true,
+      },
+      // End Cloudflare Web Analytics
     ]
   },
   /**
