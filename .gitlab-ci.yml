@@ -10,8 +10,10 @@ pages:
   script:
     - npm i
     - npm run generate
+    # make GitLab pages happy
+    - mv dist public
   artifacts:
     paths:
-      - dist
+      - public
   only:
     - main
