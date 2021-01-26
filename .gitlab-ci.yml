@@ -14,4 +14,4 @@ pages:
     paths:
       - dist
   only:
-    - master
+    - main
