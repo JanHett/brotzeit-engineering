@@ -26,8 +26,8 @@ updatedAt: 2021-01-25
     <div
         class="grid grid-cols-2 gap-4 w-full relative"
     >
-        <srcset-img src="/img/lasagna/food_20210123_ 24.jpg"></srcset-img>
-        <srcset-img src="/img/lasagna/food_20210123_ 34.jpg"></srcset-img>
+        <nuxt-picture src="/img/lasagna/food_20210123_ 24.jpg"></nuxt-picture>
+        <nuxt-picture src="/img/lasagna/food_20210123_ 34.jpg"></nuxt-picture>
     </div>
 </full-bleed-section>
 
@@ -37,12 +37,12 @@ Mix everything together and knead until perfectly homogeneous. If the dough is s
 
 On a lightly flouered working surface, roll into 1mm thick sheets and cover until needed.
 
-<srcset-img src="/img/lasagna/food_20210124_28385.jpg"></srcset-img>
+<nuxt-picture src="/img/lasagna/food_20210124_28385.jpg"></nuxt-picture>
 
 # Slow-roasted beef ragù
 
 <full-bleed-section>
-    <srcset-img src="/img/lasagna/food_20210124_ 43.jpg"></srcset-img>
+    <nuxt-picture src="/img/lasagna/food_20210124_ 43.jpg"></nuxt-picture>
 </full-bleed-section>
 
 ## Ingredients
@@ -74,9 +74,9 @@ On a lightly flouered working surface, roll into 1mm thick sheets and cover unti
     <div
         class="grid grid-cols-3 gap-4 w-full relative"
     >
-        <srcset-img src="/img/lasagna/food_20210124_28350.jpg"></srcset-img>
-        <srcset-img src="/img/lasagna/food_20210124_28366.jpg"></srcset-img>
-        <srcset-img src="/img/lasagna/food_20210124_28389.jpg"></srcset-img>
+        <nuxt-picture src="/img/lasagna/food_20210124_28350.jpg"></nuxt-picture>
+        <nuxt-picture src="/img/lasagna/food_20210124_28366.jpg"></nuxt-picture>
+        <nuxt-picture src="/img/lasagna/food_20210124_28389.jpg"></nuxt-picture>
     </div>
 </full-bleed-section>
 
@@ -96,7 +96,7 @@ While the beef is cooking, dice the pancetta, onions, carrots and celery and cut
 
 Shortly before the ragù is finished cooking, shred the beef and add it as well as its juices to the pot. Reduce and season to taste.
 
-<srcset-img src="/img/lasagna/food_20210124_28393.jpg"></srcset-img>
+<nuxt-picture src="/img/lasagna/food_20210124_28393.jpg"></nuxt-picture>
 
 # Béchamel sauce [^1]
 
@@ -104,8 +104,8 @@ Shortly before the ragù is finished cooking, shred the beef and add it as well 
 <div
     class="grid grid-cols-2 gap-4 w-full relative"
 >
-<srcset-img src="/img/lasagna/food_20210124_28327.jpg"></srcset-img>
-<div class="p-4">
+<nuxt-picture src="/img/lasagna/food_20210124_28327.jpg"></nuxt-picture>
+<div class="p-4 prose">
 
 ## Ingredients
 
@@ -143,13 +143,13 @@ In a heat-proof dish, layer béchamel sauce, ragù and pasta in this order multi
 Place in an oven at 170ºC and bake for 30-40 minutes.
 
 <full-bleed-section>
-    <srcset-img src="/img/lasagna/food_20210124_28432.jpg"></srcset-img>
+    <nuxt-picture src="/img/lasagna/food_20210124_28432.jpg"></nuxt-picture>
 </full-bleed-section>
 <!-- <full-bleed-section>
 <div
     class="grid grid-cols-2 gap-4 w-full relative"
 >
-<srcset-img src="/img/lasagna/food_20210124_28446.jpg"></srcset-img>
+<nuxt-picture src="/img/lasagna/food_20210124_28446.jpg"></nuxt-picture>
 <div class="p-4">
 </div>
 </div>

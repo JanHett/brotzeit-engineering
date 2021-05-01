@@ -12,11 +12,6 @@
         </div>
       </div>
       <hamburger-menu id="hamburger" :links="links" class="block xl:hidden"></hamburger-menu>
-      <!-- <div id="mobile-navigation-container" class="block xl:hidden p-4">
-        <ul id="navigation" class="p-4">
-          <li v-for="ln of links" :key="ln.target"><h3><nuxt-link :to="ln.target">{{ln.label}}</nuxt-link></h3></li>
-        </ul>
-      </div> -->
     </div>
 </template>
 

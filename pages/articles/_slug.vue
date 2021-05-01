@@ -2,12 +2,12 @@
     <div>
         <div id="article-header">
             <h1 id="header-title" ref="title">{{ page.title }}</h1>
-            <img
+            <nuxt-picture
                 id="header-image"
                 v-if="page.image"
                 :src="page.image"
                 :alt="page.description || 'Title image'"
-            >
+            ></nuxt-picture>
         </div>
         <article class="prose mx-auto">
             <nuxt-content :document="page" />
@@ -33,12 +33,10 @@ import { Context } from '@nuxt/types';
 import formatSiteMetadata from '../../utils/format-site-metadata';
 import { easing } from '../../utils/animation';
 import FullBleedSection from "~/components/full-bleed-section.vue";
-import SrcsetImg from "~/components/srcset-image.vue";
 
 export default {
     components: {
         FullBleedSection,
-        SrcsetImg,
     },
     head() {
         return {
@@ -73,7 +71,7 @@ export default {
                 {
                     hid: "canonical",
                     rel: "canonical",
-                    href: `https://brotzeit.engineering/articles/${(this as any).$route.params.slug}`,
+                    href: `${process.env.BASE_URL}/articles/${(this as any).$route.params.slug}`,
                 },
             ],
         }

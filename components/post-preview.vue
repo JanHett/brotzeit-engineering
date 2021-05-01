@@ -19,11 +19,11 @@
             </div>
             <div class="shade" />
         </div>
-        <img
+        <nuxt-picture
             v-if="image"
             class="post-preview-image"
             :src="image"
-        ></nuxt-link>
+        ></nuxt-picture></nuxt-link>
     </div>
 </template>
 
@@ -73,6 +73,8 @@ export default Vue.extend({
 
     width: 100%;
     height: 100%;
+
+    border: solid var(--line-width) var(--foreground);
 }
 
 .post-preview-container #post-link {

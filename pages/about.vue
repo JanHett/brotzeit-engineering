@@ -8,7 +8,7 @@
 
             <div class="grid grid-cols-3 gap-12">
                 <div class="col-span-2 xl:col-span-1">
-                    <img src="/img/self_portrait.jpg" alt="Self portrait">
+                    <nuxt-picture src="/img/self_portrait.jpg" alt="Self portrait"></nuxt-picture>
                 </div>
                 <div class="col-span-3 xl:col-span-2 space-y-4">
                     <p id="word-type" class="italic">German noun, feminine :</p>
@@ -39,6 +39,7 @@ export default Vue.extend({
             {
                 hid: "canonical",
                 rel: "canonical",
+                // TODO: reference something that is resolvable at build time
                 href: process.env.BASE_URL + "/about",
             },
         ]
