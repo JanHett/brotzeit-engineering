@@ -6,7 +6,7 @@
                 id="header-image"
                 v-if="page.image"
                 :src="page.image"
-                :alt="page.description || 'Title image'"
+                :alt="page.description || 'Title image for ${page.title}'"
             ></nuxt-picture>
         </div>
         <article class="prose mx-auto">

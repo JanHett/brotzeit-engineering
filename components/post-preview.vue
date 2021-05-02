@@ -23,6 +23,7 @@
             v-if="image"
             class="post-preview-image"
             :src="image"
+            :alt='`Title image for "${title}"`'
         ></nuxt-picture></nuxt-link>
     </div>
 </template>

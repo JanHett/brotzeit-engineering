@@ -6,6 +6,18 @@ cache:
   paths:
     - node_modules/
 
+verify_pr:
+  script:
+    - npm i
+    - npm run generate
+    # make GitLab pages happy
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - external_pull_requests
+
 pages:
   script:
     - npm i
