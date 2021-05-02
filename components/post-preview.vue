@@ -19,7 +19,7 @@
             </div>
             <div class="shade" />
         </div>
-        <nuxt-picture
+        <nuxt-picture loading="lazy"
             v-if="image"
             class="post-preview-image"
             :src="image"

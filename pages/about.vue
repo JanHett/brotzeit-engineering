@@ -8,7 +8,7 @@
 
             <div class="grid grid-cols-3 gap-12">
                 <div class="col-span-2 xl:col-span-1">
-                    <nuxt-picture src="/img/self_portrait.jpg" alt="Self portrait"></nuxt-picture>
+                    <nuxt-picture loading="lazy" src="/img/self_portrait.jpg" alt="Self portrait"></nuxt-picture>
                 </div>
                 <div class="col-span-3 xl:col-span-2 space-y-4">
                     <p id="word-type" class="italic">German noun, feminine :</p>

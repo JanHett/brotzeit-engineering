@@ -2,7 +2,7 @@
     <div>
         <div id="article-header">
             <h1 id="header-title" ref="title">{{ page.title }}</h1>
-            <nuxt-picture
+            <nuxt-picture loading="lazy"
                 id="header-image"
                 v-if="page.image"
                 :src="page.image"
