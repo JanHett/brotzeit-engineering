@@ -171,3 +171,13 @@ input[type="text"]:focus {
     /** TODO: remove this ugly hack */
     margin-bottom: calc(-1 * var(--line-width));
 }
+
+.prose picture {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.prose picture > img {
+    margin-top: unset;
+    margin-bottom: unset;
+}

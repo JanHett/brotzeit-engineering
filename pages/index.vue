@@ -31,6 +31,34 @@ const filters: FilterObject = {
     search: ""
 };
 
+/**
+ * Tests if a post `p` matches a set of tags. Always returns true if tags are
+ * empty.
+ */
+function matchesTags(p: any, tags: any) {
+    if (!tags.length) return true;
+
+    return tags.length && p.tags &&
+        tags.findIndex(
+            (tag: string) => !p.tags.includes(tag)
+        ) === -1;
+}
+
+
+/**
+ * Tests if a post `p` matches a search string. Always returns true if search is
+ * undefined.
+ */
+function matchesSearch(p: any, search: string | undefined) {
+    if (!search) return true;
+
+    return search && (
+        p.description?.indexOf(search) > -1
+        || p.title?.toLowerCase().indexOf(search.toLowerCase()) > -1
+        || p.author?.toLowerCase().indexOf(search.toLowerCase()) > -1
+    )
+}
+
 export default Vue.extend({
     components: {
         PostGrid,
@@ -79,23 +107,8 @@ export default Vue.extend({
          */
         filteredPosts() {
             return (this as any).posts.filter((p: any) => {
-                if (this.filters.tags.length && p.tags &&
-                    p.tags.findIndex(
-                        (tag: string) => this.filters.tags.includes(tag)
-                    ) > -1)
-                {
-                    return true;
-                }
-
-                if (this.filters.search && (
-                    p.description?.indexOf(this.filters.search) > -1
-                    || p.title?.toLowerCase().indexOf(this.filters.search.toLowerCase()) > -1
-                    || p.author?.toLowerCase().indexOf(this.filters.search.toLowerCase()) > -1
-                )) {
-                    return true;
-                }
-
-                return !this.filters.tags.length && !this.filters.search;
+                return matchesTags(p, this.filters.tags)
+                    && matchesSearch(p, this.filters.search);
             });
         }
     },

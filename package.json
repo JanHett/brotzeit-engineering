@@ -22,9 +22,11 @@
     "@tailwindcss/typography": "^0.3.1",
     "@types/feather-icons": "^4.7.0",
     "feather-icons": "^4.28.0",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "vue-class-component": "^7.2.6"
   },
   "devDependencies": {
+    "@nuxt/image": "^0.4.8",
     "@nuxt/typescript-build": "^0.6.7",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",

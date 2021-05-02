@@ -59,7 +59,8 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image'
   ],
   /*
 ** Nuxt.js modules
@@ -74,6 +75,19 @@ export default {
   content: {
     liveEdit: false,
   },
+  /** nuxt image options */
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 2048,
+      '3xl': 4096,
+    },
+  },
   /*
 ** Build configuration
 */
@@ -85,5 +99,9 @@ export default {
     }
   },
   generate: {
+  },
+  /** Constants set at compile time */
+  env: {
+    BASE_URL: process.env.BASE_URL,
   }
 }

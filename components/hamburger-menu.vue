@@ -5,7 +5,7 @@
                 <li v-for="ln of links" :key="ln.target"><h3><nuxt-link :to="ln.target" @click.native="open = false">{{ln.label}}</nuxt-link></h3></li>
             </ul>
         </div>
-        <button class="hamburger-button" @click="open = !open" :class="{open}">
+        <button aria-label="Open Menu" class="hamburger-button" @click="open = !open" :class="{open}">
             <div class="hamburger-dash"></div>
             <div class="hamburger-dash"></div>
             <div class="hamburger-dash"></div>
