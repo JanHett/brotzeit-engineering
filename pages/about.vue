@@ -19,13 +19,39 @@
                         </ol>
                         <p class="text-center">...</p>
                         <p>
-                            More than just a meal, Brotzeit is often a community event. Be it as a family dinner, a snack during a long hike or the well deserved break from concentrated work, Brotzeit brings people together to share in the celebration of "simple" ingredients.
+                            More than just a meal, Brotzeit is often a community
+                            event. Be it as a family dinner, a snack during a
+                            long hike or the well deserved break from
+                            concentrated work, Brotzeit brings people together
+                            to share in the celebration of "simple" ingredients.
                         </p><p>
-                            It is this appreciation of the minute details found in the seemingly mundane that inspires this publication. As a software engineer, photographer and home cook I love to identify first principles by ways of creative exploration. Through this I aspire to understand the world from the ground up.
+                            It is this appreciation of the minute details found
+                            in the seemingly mundane that inspires this
+                            publication. As a software engineer, photographer
+                            and home cook I love to identify first principles
+                            by ways of creative exploration. Through this I
+                            aspire to understand the world from the ground up.
                         </p>
                     </div>
                 </div>
             </div>
+
+            <h1 class="font-serif-headline">
+                About the author
+            </h1>
+
+            <p>
+                Hi! I'm Jan: a curious mind with a penchant for thinking about
+                problems related to computer science and image making - or
+                ideally both at the same time.
+
+                I started out wanting to make VFX movies when I was a kid. // ...
+
+                In my day job I work on Dashlane's web analysis engine: the
+                component that extracts semantic information from even the most
+                chaotic of websites so Dashlane can automatically fill in the
+                user's information.
+            </p>
         </div>
     </div>
 </template>

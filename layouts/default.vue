@@ -27,6 +27,7 @@ export default Vue.extend({
     return {
       links: [
         { label: "Home", target: "/"},
+        { label: "Projects", target: "/projects"},
         { label: "What is Brotzeit?", target: "/about"},
       ]
     }
