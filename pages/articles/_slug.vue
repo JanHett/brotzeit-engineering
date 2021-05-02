@@ -2,12 +2,12 @@
     <div>
         <div id="article-header">
             <h1 id="header-title" ref="title">{{ page.title }}</h1>
-            <nuxt-picture loading="lazy"
+            <bz-picture loading="lazy"
                 id="header-image"
                 v-if="page.image"
                 :src="page.image"
                 :alt="page.description || 'Title image for ${page.title}'"
-            ></nuxt-picture>
+            ></bz-picture>
         </div>
         <article class="prose mx-auto">
             <nuxt-content :document="page" />
@@ -33,10 +33,12 @@ import { Context } from '@nuxt/types';
 import formatSiteMetadata from '../../utils/format-site-metadata';
 import { easing } from '../../utils/animation';
 import FullBleedSection from "~/components/full-bleed-section.vue";
+import BzPicture from '~/components/bz-picture.vue'
 
 export default {
     components: {
         FullBleedSection,
+        BzPicture,
     },
     head() {
         return {

@@ -19,21 +19,22 @@
             </div>
             <div class="shade" />
         </div>
-        <nuxt-picture loading="lazy"
+        <bz-picture
             v-if="image"
             class="post-preview-image"
             :src="image"
             :alt='`Title image for "${title}"`'
-        ></nuxt-picture></nuxt-link>
+        ></bz-picture></nuxt-link>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import tag from './tag.vue'
+import BzPicture from '~/components/bz-picture.vue'
 
 export default Vue.extend({
-  components: { tag },
+  components: { tag, BzPicture },
     props: {
         title: String,
         author: String,
@@ -114,6 +115,11 @@ export default Vue.extend({
 }
 
 .post-preview-container .post-preview-image {
+    width: 100%;
+    height: 100%;
+}
+
+.post-preview-container .post-preview-image img {
     object-fit: cover;
     object-position: 50% 50%;
     width: 100%;
@@ -132,4 +138,13 @@ export default Vue.extend({
     text-align: right;
 }
 
+</style>
+
+<style>
+.post-preview-container .post-preview-image img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
 </style>

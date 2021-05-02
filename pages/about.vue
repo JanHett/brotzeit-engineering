@@ -8,7 +8,7 @@
 
             <div class="grid grid-cols-3 gap-12">
                 <div class="col-span-2 xl:col-span-1">
-                    <nuxt-picture loading="lazy" src="/img/self_portrait.jpg" alt="Self portrait"></nuxt-picture>
+                    <bz-picture loading="lazy" src="/img/self_portrait.jpg" alt="Self portrait"></bz-picture>
                 </div>
                 <div class="col-span-3 xl:col-span-2 space-y-4">
                     <p id="word-type" class="italic">German noun, feminine :</p>
@@ -32,6 +32,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import BzPicture from '~/components/bz-picture.vue'
 
 export default Vue.extend({
     head: {
@@ -45,6 +46,7 @@ export default Vue.extend({
         ]
     },
     components: {
+        BzPicture
     },
 })
 </script>
